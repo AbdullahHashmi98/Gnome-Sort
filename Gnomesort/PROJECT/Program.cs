@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,38 +8,49 @@ namespace PROJECT
 {
     class Program
     {
+        //In this code i use integer array to sort using Gnome sort algorithm
         static void Main(string[] args)
-        {
-            int[] arr = new int[5];
-            Console.WriteLine("Enter Numbers");
+        {   //Use random class
+            Random random = new Random();
+            Console.WriteLine("Enter number of elements");
+            int n = Convert.ToInt16(Console.ReadLine());
+            int[] arr = new int[n];
+        
             for(int i=0;i<arr.Length;i++)
             {
-                arr[i] = Convert.ToInt16(Console.ReadLine());
+                //take random values from 1-100
+                arr[i] = random.Next(100);
             }
-            gnome(arr);
+            //call gnome function
+            gnomesort(arr);
         }
-        public static void gnome(int[] arr)
-        {
-            for(int i=0;i<arr.Length;)
+        public static void gnomesort(int[] arr)
+        {  //take integer variable and equals to 0 for iteration
+            int index = 0;
+            //iterate while loop 
+            while(index!=arr.Length)
             {
-                if(i==0)
+                if(index==0)
                 {
-                    i++;
+                    //if index is 0 move one position forward or increament  1 in index
+                    index++;
                 }
-                if (arr[i] >= arr[i - 1])
+                if (arr[index] >= arr[index - 1])
                 {
-                    i++;
+                    //if current postion element is greater than previous one than move one position forward or increament 1 in index 
+                    index++;
                 }
                 else
-                {
-                    int temp = arr[i];
-                    arr[i] = arr[i - 1];
-                    arr[i - 1] = temp;
-                    i--;
+                {  
+                    //if current position element is less than previous one than swap the elements and move backward one position or decreament 1 in index 
+                    int temp = arr[index];
+                    arr[index] = arr[index - 1];
+                    arr[index - 1] = temp;
+                    index--;
                 }
                 }
                 
-            
+            //print sorted elements in ascending order which is my requirement you can also use you requirement
             Console.WriteLine("Sorted Array");
             for(int i=0;i<arr.Length;i++)
             {
