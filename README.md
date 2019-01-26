@@ -12,3 +12,8 @@ In Gnome sort compare its current position element with previous one.If an eleme
 
 # Use cases
 It can be use to sort folders in windows desktop environment.
+
+# Group Members
+Muhummad Yusuf Abdullah Hashmi 17B-057-CS(A)
+Marium Hashmi 17B-054-CS(A)
+Sadaf Memon 17B-001-CS(A)
